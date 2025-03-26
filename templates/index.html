@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Color Detection</title>
+</head>
+<body>
+    <h2>Upload an Image for Color Detection</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+    
+    {% if filename %}
+    <h3>Processed Image:</h3>
+    <img src="{{ url_for('uploaded_file', filename=filename) }}" width="300">
+    {% endif %}
+</body>
+</html>
